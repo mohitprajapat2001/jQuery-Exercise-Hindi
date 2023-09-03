@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get File Name jquery Exercise 1</title>
+    <style>
+        * {
+            border-radius: 10px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+
+        body {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fffefb;
+        }
+        div#main {
+            background-color: #f5f4f1;
+            padding: 10%;
+            box-shadow: 10px 10px 20px #313d44;
+        }
+        h3#result {
+            background-color: #d4eaf7;
+            padding: 10px;
+        }
+        input {
+            display: none;
+        }
+        label#filelabel {
+            background-color: #b6ccd8;
+            padding: 10px;
+        }
+    </style>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<body>
+    <div id="box">
+        <h1>Get File Name Tutorial</h1>
+        <div id="main">
+            <h3 id="result">Example : Temp.yxz</h3>
+            <label for="file" id="filelabel">Upload</label>
+            <input type="file" id="file">
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        //Main Function 
+        //get File Name using Input
+        $("input#file").change(function(event) {
+            //console.log(event.target.files[0].name)
+            $("h3#result").text(event.target.files[0].name)
+        })
+    })
+</script>
+</html>
