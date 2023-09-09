@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Cursor IO</title>
+    <style>
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color: black;
+            color: white;
+        }
+        div#main {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .cursor {
+            background: #fff;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            pointer-events: none;
+            position: fixed;
+            transition: transform 5s;
+            z-index: 1;
+            mix-blend-mode: difference;
+        }
+        h1:hover+.cursor {
+            transform: scale(10);
+        }
+    </style>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<body>
+    <div id="main">
+        <h1>Subscibe For More !</h1>
+        <div class="cursor"></div>
+    </div>
+</body>
+<script>
+    $(document).ready(function() {
+        $(document).mousemove(function(event) {
+            $(".cursor").offset({
+                "top":event.pageY-10,
+                "left":event.pageX-10
+            })
+        })
+    })
+</script>
+</html>
