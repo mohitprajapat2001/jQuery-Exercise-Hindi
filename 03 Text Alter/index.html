@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Text Change with Accordian</title>
+    <style>
+        body {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f1f1f1;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        div#main {
+            background-color: #bebebe;
+            padding: 30px;
+            width: 500px;
+            border-radius: 20px;
+        }
+
+        .mybtn {
+            background-color: #fd5732;
+            width: 100%;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            color: #fff;
+        }
+
+        .details {
+            background-color: #fbfbfb;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 1px;
+        }
+    </style>
+</head>
+<script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
+<body>
+    <div id="main">
+        <button class="mybtn">Read Less !</button>
+        <p class="details">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque incidunt dicta velit non odit accusamus laborum cum, error harum accusantium aliquam quibusdam eveniet saepe aperiam quis vitae maiores tempora reprehenderit.</p>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $(".mybtn").click(function(){
+            $(".details").slideToggle("slow");
+            if ( $(this).text() == "Read Less !") {
+                $(this).text("Read More !")
+            }
+            else {
+                $(this).text("Read Less !")
+            }
+        })
+    })
+</script>
+</html>
