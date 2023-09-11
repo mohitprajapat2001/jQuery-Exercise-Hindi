@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Preview</title>
+    <style>
+        div#main {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        img {
+            display: block;
+            margin: auto;
+            height: 250px;
+            width: 250px;
+            object-fit: cover;
+            border-radius: 40%;
+            transition: all 2s;
+        }
+
+        input#image {
+            display: none;
+        }
+
+        label {
+            display: block;
+            text-align: center;
+            margin: 10px;
+            background-color: aqua;
+            padding: 10px;
+            border-radius: 25px;
+        }
+    </style>
+</head>
+<script src="/jquery.js"></script>
+<body>
+    <div id="main">
+        <img src="/04 Image Preview/static/Vegeta.jpg" alt="">
+        <label for="image">Upload Image Here</label>
+        <input type="file" id="image">
+    </div>
+</body>
+<script>
+    $(document).ready(function() {
+        $("#image").change(function(event) {
+            console.log(event)
+            let x = URL.createObjectURL(event.target.files[0])
+            $("img").attr("src",x)
+        })
+    })
+</script>
+</html>
