@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic BG Color</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        div#main {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        h1 {
+            color: #000;
+            transition: all 1s;
+        }
+
+        input {
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<script src="/jquery.js"></script>
+<body>
+    <div id="main">
+        <h1>Dynamic Background Color</h1>
+        <input type="color" id="colorcode">
+    </div>
+</body>
+<script>
+    $(document).ready(function() {
+        $("input").change(function() {
+            let bgcolor = $(this).val()
+            $("body").css("background-color", bgcolor)
+            if (bgcolor < "#242424"){
+                $("h1").css("color", "#fff")
+            }
+            else {
+                $("h1").css("color", "#000")
+            }
+        })
+    })
+</script>
+</html>
