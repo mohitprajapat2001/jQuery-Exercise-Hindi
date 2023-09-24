@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Theme</title>
+    <style>
+        * {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #fff;
+        }
+        div#box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 10%;
+            margin-right: 10%;
+            height: 90vh;
+        }
+        button.mybtn {
+            position: fixed;
+            left: 50%;
+            top: 10%;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            transition: all 0.5s;
+        }
+
+        button.mybtn:hover {
+            box-shadow: 0px 5px 15px #242424;
+        }
+        .light-theme {
+            background-color: #fff;
+            color: #000;
+            transition: background-color 1s, color 1s;
+        }
+        .dark-theme {
+            background-color: #000;
+            color: #fff;
+            transition: background-color 1s, color 1s;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<script src="/jquery.js"></script>
+<body class="light-theme">
+    <div id="main">
+        <button class="mybtn"><i class="fa-solid fa-sun"></i><span class="theme_name"> Light Theme</span></button>
+        <div id="box">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae aut pariatur aliquid eveniet voluptas dignissimos, itaque corporis ducimus delectus voluptate molestias, voluptatibus necessitatibus. Nemo magnam enim expedita quaerat corporis, accusamus voluptates alias nihil velit mollitia. Odio eaque debitis quas illo culpa sed? Itaque consectetur soluta illum voluptatem dolores. Voluptates velit, dolorem, eveniet similique a blanditiis, accusamus voluptas ipsum iste nemo nesciunt corrupti voluptate incidunt aperiam. Voluptates laudantium magni, saepe officia sint illo recusandae vel quas porro animi, quasi obcaecati. Deserunt reiciendis odit dicta ducimus modi ex saepe praesentium unde non, fugit, eaque impedit laborum quos dignissimos enim. Nostrum itaque in officia doloremque neque nemo et laudantium! Eum fugit enim tenetur velit? Similique officia reprehenderit enim dolor dolores, eaque deleniti explicabo esse iusto reiciendis voluptates sit sint omnis voluptatibus atque voluptate aperiam debitis itaque dignissimos! Quod voluptatibus dicta quam in exercitationem itaque explicabo obcaecati magnam eveniet error culpa, illo ex molestiae soluta officia modi rem omnis quae ad! Eos, alias natus at ad, nemo aspernatur deserunt dolorem debitis illum similique commodi error labore consectetur iure ex quas ducimus expedita architecto earum porro aut repudiandae doloribus odio repellat. Explicabo, quasi. Facilis totam delectus ratione sequi est? Deserunt officiis alias quia quibusdam eligendi deleniti ipsam odio dolorum, minus rem. Iure deleniti, a aut sint voluptatibus ab suscipit? Adipisci culpa voluptatem voluptatum consectetur totam ducimus distinctio fuga sed quis hic quasi eum sunt libero expedita, soluta et, quibusdam unde nobis eaque tempore veritatis nulla? Quo explicabo molestias perspiciatis laborum soluta ex doloribus eveniet blanditiis?</p>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $("button.mybtn").click(function(){
+            $("body").toggleClass("dark-theme")
+            $("i").toggleClass("fa-moon")
+            if ($("span").text() == " Light Theme") {
+                $("span").text(" Dark Theme")
+            }
+            else {
+                $("span").text(" Light Theme")
+            }
+        })
+    })
+</script>
+</html>
