@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HexCode Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            font-family:'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            border: 1px solid;
+        }
+
+        div#main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        div.color {
+            height: 150px;
+            width: 150px;
+            background: #ed145b;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        div.box {
+            height: 150px;
+            width: 250px;
+            display: grid;
+            align-items: center;
+        }
+
+        p {
+            padding: 10px;
+            border: 5px solid #ed145b;
+            border-radius: 10px;
+            font-size: 20px;
+            text-align: left;
+        }
+
+        i {
+            text-align: right;
+        }
+
+        button {
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="color"></div>
+        <div class="box">
+            <p class="code">#000000 <i class="fa-solid fa-copy"></i></p>
+            <button class="btn">Generate</button>
+        </div>
+    </div>
+</body>
+</html>
